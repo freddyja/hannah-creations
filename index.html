@@ -3,42 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hannah Creations</title>
+  <title>Hannah's Creations</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap">
   <style>
     :root {
-      --bg: #FAF7F2;
-      --surface: #FFFFFF;
-      --surface-alt: #F2E8DF;
-      --ink: #1A1218;
-      --muted: #8B7680;
-      --ruby: #B5003A;
-      --gold: #C9A84C;
-      --gold-dim: rgba(201,168,76,0.22);
+      --bg: #412C2B;
+      --surface: #4F3735;
+      --surface-alt: #5A4440;
+      --ink: #F5E8E5;
+      --muted: #D4B5A8;
+      --ruby: #E87760;
+      --gold: #E8A890;
+      --gold-dim: rgba(232,119,96,0.25);
+      --rose: #F5B8A0;
       --r: 13px;
     }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) {
-        --bg: #1C1220;
-        --surface: #271830;
-        --surface-alt: #321C3C;
-        --ink: #F5EEF8;
-        --muted: #B09ABB;
-        --ruby: #E03568;
-        --gold: #D4AF60;
-        --gold-dim: rgba(212,175,96,0.18);
+        --bg: #412C2B;
+        --surface: #4F3735;
+        --surface-alt: #5A4440;
+        --ink: #F5E8E5;
+        --muted: #D4B5A8;
+        --ruby: #FF9B7F;
+        --gold: #FFB399;
+        --gold-dim: rgba(255,155,127,0.22);
       }
     }
     :root[data-theme="dark"] {
-      --bg: #1C1220;
-      --surface: #271830;
-      --surface-alt: #321C3C;
-      --ink: #F5EEF8;
-      --muted: #B09ABB;
-      --ruby: #E03568;
-      --gold: #D4AF60;
-      --gold-dim: rgba(212,175,96,0.18);
+      --bg: #412C2B;
+      --surface: #4F3735;
+      --surface-alt: #5A4440;
+      --ink: #F5E8E5;
+      --muted: #D4B5A8;
+      --ruby: #FF9B7F;
+      --gold: #FFB399;
+      --gold-dim: rgba(255,155,127,0.22);
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
@@ -70,14 +71,16 @@
     .banner{background:var(--ruby);color:#fff;text-align:center;padding:0.75rem 2rem;font-size:0.875rem;letter-spacing:0.05em}
 
     /* HERO */
-    .hero{padding:6rem 4rem;text-align:center;display:flex;flex-direction:column;align-items:center}
-    .eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
+    .hero{padding:6rem 4rem;text-align:center;display:flex;flex-direction:column;align-items:center;position:relative;background:linear-gradient(135deg,rgba(245,201,217,0.15) 0%,rgba(255,255,255,0) 50%);border-radius:20px;margin:2rem 4rem}
+    .hero::before{content:'✿';position:absolute;top:2rem;left:50%;transform:translateX(-50%);font-size:2rem;opacity:0.3;color:var(--ruby)}
+    .hero::after{content:'✿';position:absolute;bottom:2rem;right:5%;font-size:1.5rem;opacity:0.3;color:var(--ruby)}
+    .eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ruby);margin-bottom:1.25rem}
     .hero-h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.75rem,4.5vw,4.25rem);font-weight:300;line-height:1.08;text-wrap:balance;margin-bottom:1.5rem;letter-spacing:-.01em}
     .hero-h1 em{font-style:italic;color:var(--ruby)}
     .hero-sub{font-size:1.0625rem;color:var(--muted);max-width:52ch;line-height:1.75;margin-bottom:1.5rem}
 
     /* TRUST */
-    .trust{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim)}
+    .trust{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim);background:linear-gradient(90deg,rgba(255,255,255,0.4) 0%,rgba(245,201,217,0.08) 50%,rgba(255,255,255,0.4) 100%)}
     .ti{padding:1.75rem 2rem;border-right:1px solid var(--gold-dim)}
     .ti:last-child{border-right:none}
     .ti-head{font-size:.875rem;font-weight:600;color:var(--ink);margin-bottom:.25rem;display:flex;align-items:center;gap:.5rem}
@@ -85,7 +88,7 @@
     .ti-body{font-size:.8125rem;color:var(--muted);line-height:1.5}
 
     /* BUILDER */
-    .builder{padding:4rem;background:var(--surface)}
+    .builder{padding:4rem;background:var(--surface);background-image:radial-gradient(circle at 20% 50%, rgba(245,201,217,0.12) 0%, transparent 50%),radial-gradient(circle at 80% 80%, rgba(212,168,168,0.1) 0%, transparent 50%);position:relative}
     .builder-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.875rem;font-weight:300;text-wrap:balance;margin-bottom:3rem;text-align:center}
     .builder-grid{display:grid;grid-template-columns:2fr 1fr;gap:3rem;max-width:1200px;margin:0 auto}
     .builder-left{}
@@ -94,12 +97,14 @@
     .section{margin-bottom:2.5rem}
     .section-title{font-size:0.875rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
     .option-group{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:1.5rem}
-    .option-btn{background:var(--surface);border:2px solid var(--gold-dim);border-radius:8px;padding:1rem;cursor:pointer;transition:all .2s;text-align:left}
-    .option-btn:hover{border-color:var(--gold);box-shadow:0 4px 12px rgba(201,168,76,0.1)}
-    .option-btn.active{border-color:var(--ruby);background:rgba(181,0,58,0.05)}
+    .option-btn{background:var(--surface);border:2px solid var(--gold-dim);border-radius:12px;padding:1rem;cursor:pointer;transition:all .2s;text-align:left;box-shadow:0 2px 8px rgba(232,185,200,0.08)}
+    .option-btn:hover{border-color:var(--ruby);box-shadow:0 6px 16px rgba(232,99,158,0.15);transform:translateY(-2px)}
+    .option-btn.active{border-color:var(--ruby);background:rgba(232,99,158,0.08)}
+    .option-icon{width:48px;height:48px;margin-bottom:0.75rem;opacity:0.85;transition:transform .2s}
+    .option-btn:hover .option-icon{transform:scale(1.1)}
     .option-name{font-weight:600;font-size:0.9375rem;color:var(--ink);margin-bottom:0.25rem}
     .option-type{font-size:0.75rem;color:var(--muted)}
-    .option-price{font-size:0.875rem;font-weight:500;color:var(--gold);margin-top:0.5rem}
+    .option-price{font-size:0.875rem;font-weight:500;color:var(--ruby);margin-top:0.5rem}
 
     .custom-input{display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem}
     .custom-input label{font-size:0.875rem;font-weight:600;color:var(--ink)}
@@ -120,7 +125,7 @@
     .cta-btn:hover{opacity:.9}
 
     /* CHECKOUT */
-    .checkout{padding:4rem;background:var(--surface-alt)}
+    .checkout{padding:4rem;background:var(--surface-alt);background-image:radial-gradient(circle at 10% 30%, rgba(232,99,158,0.08) 0%, transparent 40%),radial-gradient(circle at 90% 70%, rgba(212,168,168,0.08) 0%, transparent 40%)}
     .checkout-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.875rem;font-weight:300;text-wrap:balance;margin-bottom:2rem;text-align:center}
     .checkout-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1000px;margin:0 auto}
 
@@ -146,9 +151,11 @@
     .submit-btn:hover{opacity:.9}
 
     /* CONTACT */
-    .contact{padding:4rem;background:var(--surface);border-top:1px solid var(--gold-dim)}
+    .contact{padding:4rem;background:var(--surface);border-top:1px solid var(--gold-dim);background-image:radial-gradient(circle at 50% 0%, rgba(245,201,217,0.1) 0%, transparent 60%)}
     .contact-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.875rem;font-weight:300;text-wrap:balance;margin-bottom:2rem;text-align:center}
     .contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;max-width:1000px;margin:0 auto}
+    .contact-col{position:relative}
+    .contact-col::before{content:'✦';position:absolute;top:-1.5rem;left:0;font-size:1.25rem;color:var(--ruby);opacity:0.4}
     .contact-col h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.125rem;font-weight:400;margin-bottom:1rem;color:var(--ink)}
     .contact-col p{font-size:0.9375rem;color:var(--muted);line-height:1.6}
     .contact-col a{color:var(--ink);text-decoration:none}
@@ -201,7 +208,7 @@
 
 <!-- HEADER -->
 <header class="hdr">
-  <a href="#" class="logo">Hannah <span class="g">Creations</span></a>
+  <a href="#" class="logo">Hannah<span class="g">'s Creations</span></a>
   <ul class="nav">
     <li><a href="#builder">Order</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -239,31 +246,68 @@
         <div class="section-title">💎 Choose a Piece</div>
         <div class="option-group">
           <button class="option-btn active" data-product="necklace" data-price="28">
+            <svg class="option-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 8L28 16H36L32 8Z" fill="#E8639E" stroke="#D4A8A8" stroke-width="1.5"/>
+              <path d="M20 18C18 22 16 28 16 32C16 40 22 46 32 46C42 46 48 40 48 32C48 28 46 22 44 18" stroke="#D4A8A8" stroke-width="2" fill="none"/>
+              <circle cx="32" cy="32" r="8" fill="#F5C9D9" stroke="#D4A8A8" stroke-width="1.5"/>
+            </svg>
             <div class="option-name">Name Necklace</div>
             <div class="option-type">Custom Letter Charm</div>
             <div class="option-price">from $28</div>
           </button>
           <button class="option-btn" data-product="bracelet" data-price="15">
+            <svg class="option-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="32" r="22" fill="none" stroke="#D4A8A8" stroke-width="2.5"/>
+              <circle cx="20" cy="32" r="3.5" fill="#E8639E"/>
+              <circle cx="28" cy="20" r="3.5" fill="#F5C9D9"/>
+              <circle cx="36" cy="20" r="3.5" fill="#D4A8A8"/>
+              <circle cx="44" cy="32" r="3.5" fill="#E8639E"/>
+            </svg>
             <div class="option-name">Beaded Bracelet</div>
             <div class="option-type">BFF Color Set</div>
             <div class="option-price">from $15</div>
           </button>
           <button class="option-btn" data-product="earrings" data-price="22">
+            <svg class="option-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="22" cy="20" r="3" fill="#D4A8A8" stroke="#E8639E" stroke-width="1.5"/>
+              <path d="M22 23L20 38C20 40 21 42 22 42C23 42 24 40 24 38L22 23Z" fill="#F5C9D9" stroke="#D4A8A8" stroke-width="1.5"/>
+              <circle cx="42" cy="20" r="3" fill="#D4A8A8" stroke="#E8639E" stroke-width="1.5"/>
+              <path d="M42 23L40 38C40 40 41 42 42 42C43 42 44 40 44 38L42 23Z" fill="#F5C9D9" stroke="#D4A8A8" stroke-width="1.5"/>
+            </svg>
             <div class="option-name">Pearl Earrings</div>
             <div class="option-type">Classic Drops</div>
             <div class="option-price">$22</div>
           </button>
           <button class="option-btn" data-product="charm" data-price="35">
+            <svg class="option-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="32" r="20" fill="none" stroke="#D4A8A8" stroke-width="2"/>
+              <path d="M22 28L26 24L30 28L26 32Z" fill="#E8639E" stroke="#D4A8A8" stroke-width="1"/>
+              <path d="M38 24L42 20L46 24L42 28Z" fill="#F5C9D9" stroke="#D4A8A8" stroke-width="1"/>
+              <path d="M26 42L30 38L34 42L30 46Z" fill="#E8639E" stroke="#D4A8A8" stroke-width="1"/>
+            </svg>
             <div class="option-name">Charm Bracelet</div>
             <div class="option-type">Crystal Charms</div>
             <div class="option-price">from $35</div>
           </button>
           <button class="option-btn" data-product="birthstone" data-price="32">
+            <svg class="option-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 12L36 20H28L32 12Z" fill="#E8639E"/>
+              <path d="M28 20H36L40 28H24L28 20Z" fill="#F5C9D9"/>
+              <path d="M24 28H40L36 42H28L24 28Z" fill="#E8639E" stroke="#D4A8A8" stroke-width="1.5"/>
+              <line x1="24" y1="48" x2="40" y2="48" stroke="#D4A8A8" stroke-width="1.5"/>
+              <line x1="26" y1="48" x2="26" y2="52" stroke="#D4A8A8" stroke-width="1.5"/>
+              <line x1="38" y1="48" x2="38" y2="52" stroke="#D4A8A8" stroke-width="1.5"/>
+            </svg>
             <div class="option-name">Birthstone Pendant</div>
             <div class="option-type">Gemstone Drop</div>
             <div class="option-price">$32</div>
           </button>
           <button class="option-btn" data-product="ring" data-price="18">
+            <svg class="option-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="36" r="14" fill="none" stroke="#D4A8A8" stroke-width="3"/>
+              <circle cx="32" cy="24" r="4.5" fill="#E8639E" stroke="#D4A8A8" stroke-width="1.5"/>
+              <line x1="32" y1="28" x2="32" y2="32" stroke="#D4A8A8" stroke-width="1.5"/>
+            </svg>
             <div class="option-name">Initial Ring</div>
             <div class="option-type">Stacking Ring</div>
             <div class="option-price">$18</div>
@@ -435,123 +479,4 @@
           <span>Total</span>
           <span id="order-total">$28</span>
         </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <h2 class="contact-title">Get in Touch</h2>
-  <div class="contact-grid">
-    <div class="contact-col">
-      <h3>Phone</h3>
-      <p><a href="tel:+14075550000">(407) 555-0000</a></p>
-    </div>
-    <div class="contact-col">
-      <h3>WhatsApp</h3>
-      <p><a href="https://wa.me/14075550000" target="_blank">wa.me/14075550000</a></p>
-    </div>
-    <div class="contact-col">
-      <h3>Location</h3>
-      <p>Spring Hill, FL<br>Ships nationwide</p>
-    </div>
-    <div class="contact-col">
-      <h3>Hours</h3>
-      <p>Mon – Sat · 9am – 6pm</p>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="ftr">
-  <div class="ftr-logo">Hannah <span style="color:var(--gold)">Creations</span></div>
-  <p>© 2026 Hannah Creations · Spring Hill, FL · "She is clothed with strength and dignity." — Prov. 31:25</p>
-</footer>
-
-<script>
-let currentProduct = {name: 'Name Necklace', price: 28};
-let currentMetal = {name: 'Gold-Filled', price: 0};
-let quantity = 1;
-let deliveryFee = 0;
-
-// Product selection
-document.querySelectorAll('[data-product]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('[data-product]').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    currentProduct = {name: btn.querySelector('.option-name').textContent, price: parseInt(btn.dataset.price)};
-    updateTotal();
-  });
-});
-
-// Metal selection
-document.querySelectorAll('[data-metal]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('[data-metal]').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    currentMetal = {name: btn.querySelector('.option-name').textContent, price: parseInt(btn.dataset.metalPrice)};
-    updateTotal();
-  });
-});
-
-// Delivery
-document.querySelectorAll('input[name="delivery"]').forEach(radio => {
-  radio.addEventListener('change', () => {
-    const parent = radio.parentElement;
-    document.querySelectorAll('.delivery-opt').forEach(opt => opt.classList.remove('active'));
-    parent.classList.add('active');
-    const fees = {pickup: 0, local: 15, mail: 8};
-    deliveryFee = fees[radio.value];
-    updateOrderSummary();
-  });
-});
-
-function updateQty(n) {
-  quantity = Math.max(1, quantity + n);
-  document.getElementById('qty').textContent = quantity;
-  document.getElementById('qty-display').textContent = quantity;
-  updateTotal();
-}
-
-function updateTotal() {
-  const subtotal = (currentProduct.price + currentMetal.price) * quantity;
-  const total = subtotal + deliveryFee;
-  document.getElementById('item-name').textContent = currentProduct.name;
-  document.getElementById('item-price').textContent = '$' + currentProduct.price;
-  document.getElementById('metal-name').textContent = currentMetal.name;
-  document.getElementById('metal-price').textContent = '+$' + currentMetal.price;
-  document.getElementById('total').textContent = '$' + total;
-  updateOrderSummary();
-}
-
-function updateOrderSummary() {
-  const subtotal = (currentProduct.price + currentMetal.price) * quantity;
-  const total = subtotal + deliveryFee;
-  document.getElementById('order-item-name').textContent = currentProduct.name;
-  document.getElementById('order-item-price').textContent = '$' + currentProduct.price;
-  document.getElementById('order-metal-name').textContent = currentMetal.name;
-  document.getElementById('order-metal-price').textContent = '+$' + currentMetal.price;
-  document.getElementById('order-qty-line').textContent = 'Quantity: ' + quantity;
-  const delivery = document.querySelector('input[name="delivery"]:checked').parentElement.querySelector('.delivery-name').textContent;
-  document.getElementById('order-delivery-name').textContent = delivery;
-  document.getElementById('order-delivery-price').textContent = deliveryFee > 0 ? '+$' + deliveryFee : '+$0';
-  document.getElementById('order-total').textContent = '$' + total;
-}
-
-function goToCheckout() {
-  document.getElementById('checkout').scrollIntoView({behavior: 'smooth'});
-}
-
-function submitOrder() {
-  const notes = document.getElementById('notes').value || '(no special notes)';
-  const msg = `Hi Hannah! I'd like to order: ${currentProduct.name} in ${currentMetal.name}, quantity ${quantity}. Details: ${notes}`;
-  window.location.href = 'https://wa.me/14075550000?text=' + encodeURIComponent(msg);
-}
-
-updateOrderSummary();
-</script>
-
-</body>
-</html>
+ 
