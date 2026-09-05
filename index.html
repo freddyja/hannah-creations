@@ -1,0 +1,652 @@
+<title>Hannah Creations</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap">
+<style>
+:root {
+  --bg: #FAF7F2;
+  --surface: #FFFFFF;
+  --surface-alt: #F2E8DF;
+  --ink: #1A1218;
+  --muted: #8B7680;
+  --ruby: #B5003A;
+  --gold: #C9A84C;
+  --gold-dim: rgba(201,168,76,0.22);
+  --r: 13px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1C1220;
+    --surface: #271830;
+    --surface-alt: #321C3C;
+    --ink: #F5EEF8;
+    --muted: #B09ABB;
+    --ruby: #E03568;
+    --gold: #D4AF60;
+    --gold-dim: rgba(212,175,96,0.18);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1C1220;
+  --surface: #271830;
+  --surface-alt: #321C3C;
+  --ink: #F5EEF8;
+  --muted: #B09ABB;
+  --ruby: #E03568;
+  --gold: #D4AF60;
+  --gold-dim: rgba(212,175,96,0.18);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--gold-dim);display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:62px}
+.logo{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;font-weight:600;color:var(--ink);text-decoration:none;letter-spacing:.02em}
+.logo .g{color:var(--gold)}
+.nav{display:flex;gap:2.5rem;list-style:none}
+.nav a{font-size:.8125rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .15s}
+.nav a:hover{color:var(--ink)}
+.btn{display:inline-block;padding:.5rem 1.375rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.875rem;font-weight:500;cursor:pointer;border:none;text-decoration:none;transition:opacity .15s}
+.btn:hover{opacity:.85}
+.btn-ruby{background:var(--ruby);color:#fff}
+.btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--gold-dim)}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh}
+.hero-txt{display:flex;flex-direction:column;justify-content:center;padding:5rem 3rem 5rem 4rem}
+.eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
+.hero-h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.75rem,4.5vw,4.25rem);font-weight:300;line-height:1.08;text-wrap:balance;margin-bottom:1.5rem;letter-spacing:-.01em}
+.hero-h1 em{font-style:italic;color:var(--ruby)}
+.hero-sub{font-size:1.0625rem;color:var(--muted);max-width:40ch;line-height:1.75;margin-bottom:2.5rem}
+.hero-acts{display:flex;align-items:center;gap:1.25rem}
+.link-u{font-size:.9375rem;color:var(--muted);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px}
+.hero-vis{background:var(--surface-alt);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+#hCanvas{width:100%;height:100%;display:block}
+
+/* TRUST */
+.trust{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim)}
+.ti{padding:1.75rem 2rem;border-right:1px solid var(--gold-dim)}
+.ti:last-child{border-right:none}
+.ti-head{font-size:.875rem;font-weight:600;color:var(--ink);margin-bottom:.25rem;display:flex;align-items:center;gap:.5rem}
+.ti-dot{width:7px;height:7px;background:var(--gold);border-radius:50%;flex-shrink:0}
+.ti-body{font-size:.8125rem;color:var(--muted);line-height:1.5}
+
+/* GALLERY */
+.wrap{padding:6rem 4rem}
+.sh{margin-bottom:3rem}
+.eyebrow-s{font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.st{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.875rem,3vw,3rem);font-weight:300;line-height:1.15;text-wrap:balance}
+.st em{font-style:italic;color:var(--ruby)}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.jcard{background:var(--surface);border:1px solid var(--gold-dim);border-radius:var(--r);overflow:hidden;transition:transform .18s ease,box-shadow .18s ease}
+.jcard:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(26,18,24,.1)}
+.cp{height:195px;background:var(--surface-alt);display:flex;align-items:center;justify-content:center;padding:1.25rem}
+.cp svg{width:100%;height:100%;max-width:200px;max-height:160px}
+.cb{padding:1.125rem 1.25rem 1.375rem}
+.ctag{font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
+.cname{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.1875rem;font-weight:400;margin-bottom:.3rem;color:var(--ink)}
+.cdesc{font-size:.8125rem;color:var(--muted);line-height:1.55;margin-bottom:.875rem}
+.cft{display:flex;align-items:center;justify-content:space-between}
+.cprice{font-size:1.0625rem;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.cfrom{font-size:.75rem;color:var(--muted);margin-right:.2rem}
+.clink{font-size:.8125rem;font-weight:500;color:var(--ruby);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px}
+
+/* HOW */
+.how{background:var(--surface-alt);padding:6rem 4rem}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:3.5rem;position:relative}
+.steps::after{content:'';position:absolute;top:18px;left:12%;right:12%;height:1px;background:var(--gold-dim)}
+.step{padding:0 2.5rem 0 0}
+.snum{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold);margin-bottom:1.5rem;background:var(--surface-alt);position:relative;z-index:1}
+.stitle{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.25rem;font-weight:400;margin-bottom:.5rem}
+.sdesc{font-size:.9375rem;color:var(--muted);line-height:1.65;max-width:28ch}
+
+/* CTA */
+.cta-sec{padding:7rem 4rem;text-align:center;display:flex;flex-direction:column;align-items:center}
+.cta-sec .st{max-width:18ch;margin:.75rem auto 1.5rem}
+.cta-sec .sub{font-size:1.0625rem;color:var(--muted);max-width:44ch;line-height:1.7;margin-bottom:2.5rem}
+.cta-row{display:flex;gap:1rem;align-items:center}
+
+/* FOOTER */
+.ftr{border-top:1px solid var(--gold-dim);padding:3rem 4rem;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem}
+.ftr .logo{display:block;margin-bottom:.75rem}
+.ftag{font-size:.875rem;color:var(--muted);line-height:1.65;max-width:28ch;margin-bottom:1rem}
+.fct{font-size:.875rem;color:var(--muted);margin-bottom:.25rem}
+.fct a{color:var(--ink);text-decoration:none}
+.fct a:hover{color:var(--ruby)}
+.fcol h4{font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+.flinks{list-style:none}
+.flinks li+li{margin-top:.5rem}
+.flinks a{font-size:.9375rem;color:var(--ink);text-decoration:none;opacity:.7}
+.flinks a:hover{opacity:1}
+.fbot{border-top:1px solid var(--gold-dim);padding:1.25rem 4rem;display:flex;justify-content:space-between;align-items:center}
+.fbot p{font-size:.8125rem;color:var(--muted)}
+
+/* VERSE BAND */
+.verse-band{background:var(--gold-dim);border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim);padding:2rem 4rem;text-align:center}
+.verse-text{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.25rem;font-style:italic;font-weight:300;color:var(--ink);line-height:1.6;max-width:56ch;margin:0 auto .4rem}
+.verse-ref{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.g3{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){
+  .hdr{padding:0 1.5rem}.nav{display:none}
+  .hero{grid-template-columns:1fr}.hero-vis{height:60vw;min-height:300px}
+  .hero-txt{padding:3rem 1.5rem}
+  .trust{grid-template-columns:1fr 1fr}
+  .wrap{padding:4rem 1.5rem}.g3{grid-template-columns:1fr 1fr}
+  .how{padding:4rem 1.5rem}.steps{grid-template-columns:1fr}.steps::after{display:none}
+  .cta-sec{padding:4rem 1.5rem}
+  .ftr{grid-template-columns:1fr;padding:3rem 1.5rem}
+  .fbot{padding:1.25rem 1.5rem;flex-direction:column;gap:.5rem;text-align:center}
+}
+@media(max-width:500px){.trust{grid-template-columns:1fr}.ti{border-right:none;border-bottom:1px solid var(--gold-dim)}.g3{grid-template-columns:1fr}}
+</style>
+
+<!-- HEADER -->
+<header class="hdr">
+  <a href="#" class="logo">Hannah <span class="g">Creations</span></a>
+  <ul class="nav">
+    <li><a href="#pieces">Pieces</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#order" class="btn btn-ruby">Order Custom</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-txt">
+    <p class="eyebrow">✝ Faith-Inspired · Handcrafted with Love</p>
+    <h1 class="hero-h1">Wear something made <em>just for you</em></h1>
+    <p class="hero-sub">Every piece is handcrafted with prayer and care — your name, your birthstone, your colors. Rooted in faith, made just for you.</p>
+    <div class="hero-acts">
+      <a href="#pieces" class="btn btn-ruby">Browse Pieces</a>
+      <a href="#process" class="link-u">How it works</a>
+    </div>
+  </div>
+  <div class="hero-vis">
+    <canvas id="hCanvas"></canvas>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="ti"><div class="ti-head"><span class="ti-dot"></span>100% Handmade</div><p class="ti-body">Every piece crafted by hand with real care and attention.</p></div>
+  <div class="ti"><div class="ti-head"><span class="ti-dot"></span>Custom Orders</div><p class="ti-body">Your name, initials, birthstone, colors — all yours to pick.</p></div>
+  <div class="ti"><div class="ti-head"><span class="ti-dot"></span>Ships in 3–5 Days</div><p class="ti-body">Fast turnaround so you're never waiting long for your piece.</p></div>
+  <div class="ti"><div class="ti-head"><span class="ti-dot"></span>Affordable Luxury</div><p class="ti-body">Fine-feeling jewelry that won't cost a fortune. Starting at $15.</p></div>
+</div>
+
+<!-- SCRIPTURE BANNER -->
+<div class="verse-band">
+  <p class="verse-text">"She is clothed with strength and dignity, and she laughs without fear of the future."</p>
+  <p class="verse-ref">Proverbs 31:25</p>
+</div>
+
+<!-- GALLERY -->
+<section class="wrap" id="pieces">
+  <div class="sh">
+    <p class="eyebrow-s">Featured Pieces</p>
+    <h2 class="st">Pieces made with <em>faith and love</em></h2>
+  </div>
+  <div class="g3">
+
+    <!-- Card 1: Name Necklace -->
+    <div class="jcard">
+      <div class="cp">
+        <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 18,42 C 18,108 182,108 182,42" fill="none" stroke="#C9A84C" stroke-width="1.6"/>
+          <circle cx="18" cy="42" r="3.5" fill="#C9A84C"/>
+          <circle cx="182" cy="42" r="3.5" fill="#C9A84C"/>
+          <!-- L -->
+          <line x1="41" y1="76" x2="41" y2="92" stroke="#C9A84C" stroke-width="1.1"/>
+          <circle cx="41" cy="101" r="9" fill="none" stroke="#C9A84C" stroke-width="1.3"/>
+          <text x="41" y="101" text-anchor="middle" dominant-baseline="central" font-family="Georgia,serif" font-size="10" fill="#C9A84C" font-style="italic">L</text>
+          <!-- U -->
+          <line x1="76" y1="90" x2="76" y2="106" stroke="#C9A84C" stroke-width="1.1"/>
+          <circle cx="76" cy="115" r="9" fill="none" stroke="#C9A84C" stroke-width="1.3"/>
+          <text x="76" y="115" text-anchor="middle" dominant-baseline="central" font-family="Georgia,serif" font-size="10" fill="#C9A84C" font-style="italic">U</text>
+          <!-- N -->
+          <line x1="100" y1="95" x2="100" y2="111" stroke="#C9A84C" stroke-width="1.1"/>
+          <circle cx="100" cy="120" r="9" fill="none" stroke="#C9A84C" stroke-width="1.3"/>
+          <text x="100" y="120" text-anchor="middle" dominant-baseline="central" font-family="Georgia,serif" font-size="10" fill="#C9A84C" font-style="italic">N</text>
+          <!-- A -->
+          <line x1="124" y1="90" x2="124" y2="106" stroke="#C9A84C" stroke-width="1.1"/>
+          <circle cx="124" cy="115" r="9" fill="none" stroke="#C9A84C" stroke-width="1.3"/>
+          <text x="124" y="115" text-anchor="middle" dominant-baseline="central" font-family="Georgia,serif" font-size="10" fill="#C9A84C" font-style="italic">A</text>
+          <!-- tiny sparkle -->
+          <line x1="158" y1="48" x2="162" y2="48" stroke="#C9A84C" stroke-width="1" opacity=".5"/>
+          <line x1="160" y1="46" x2="160" y2="50" stroke="#C9A84C" stroke-width="1" opacity=".5"/>
+        </svg>
+      </div>
+      <div class="cb">
+        <p class="ctag">Name Necklace</p>
+        <p class="cname">Custom Letter Charm Chain</p>
+        <p class="cdesc">Gold-filled chain with hand-stamped disc charms. Any name, up to 8 letters.</p>
+        <div class="cft"><span class="cprice"><span class="cfrom">from</span>$28</span><a href="#order" class="clink">Order yours</a></div>
+      </div>
+    </div>
+
+    <!-- Card 2: Beaded Bracelet -->
+    <div class="jcard">
+      <div class="cp">
+        <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+          <!-- elastic cord suggestion -->
+          <ellipse cx="100" cy="80" rx="58" ry="36" fill="none" stroke="#D1D5DB" stroke-width="1.2" opacity=".5"/>
+          <!-- 16 beads -->
+          <circle cx="158" cy="80"  r="7.5" fill="#F472B6"/>
+          <circle cx="153" cy="58"  r="7.5" fill="#A78BFA"/>
+          <circle cx="136" cy="41"  r="7.5" fill="#60A5FA"/>
+          <circle cx="113" cy="46"  r="7.5" fill="#FB7185"/>
+          <circle cx="100" cy="44"  r="7.5" fill="#FBBF24"/>
+          <circle cx="87"  cy="46"  r="7.5" fill="#34D399"/>
+          <circle cx="64"  cy="41"  r="7.5" fill="#F472B6"/>
+          <circle cx="47"  cy="58"  r="7.5" fill="#A78BFA"/>
+          <circle cx="42"  cy="80"  r="7.5" fill="#60A5FA"/>
+          <circle cx="47"  cy="102" r="7.5" fill="#FB7185"/>
+          <circle cx="64"  cy="119" r="7.5" fill="#FBBF24"/>
+          <circle cx="87"  cy="114" r="7.5" fill="#34D399"/>
+          <circle cx="100" cy="116" r="7.5" fill="#F472B6"/>
+          <circle cx="113" cy="114" r="7.5" fill="#A78BFA"/>
+          <circle cx="136" cy="119" r="7.5" fill="#60A5FA"/>
+          <circle cx="153" cy="102" r="7.5" fill="#FB7185"/>
+          <!-- bead highlights -->
+          <circle cx="155" cy="76" r="2.5" fill="rgba(255,255,255,0.55)"/>
+          <circle cx="150" cy="54" r="2.5" fill="rgba(255,255,255,0.55)"/>
+          <circle cx="133" cy="37" r="2.5" fill="rgba(255,255,255,0.55)"/>
+        </svg>
+      </div>
+      <div class="cb">
+        <p class="ctag">Beaded Bracelet</p>
+        <p class="cname">BFF Color Bracelet Set</p>
+        <p class="cdesc">Stretch seed-bead bracelets in your choice of colors. Perfect for you and your bestie.</p>
+        <div class="cft"><span class="cprice"><span class="cfrom">from</span>$15</span><a href="#order" class="clink">Order yours</a></div>
+      </div>
+    </div>
+
+    <!-- Card 3: Pearl Earrings -->
+    <div class="jcard">
+      <div class="cp">
+        <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+          <!-- Left earring -->
+          <path d="M 62,20 C 62,12 72,10 76,14 C 80,18 80,28 76,36" fill="none" stroke="#C9A84C" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="76" y1="36" x2="76" y2="50" stroke="#C9A84C" stroke-width="1.4"/>
+          <rect x="70" y="50" width="12" height="7" rx="2.5" fill="#C9A84C"/>
+          <line x1="76" y1="57" x2="76" y2="72" stroke="#C9A84C" stroke-width="1.2"/>
+          <circle cx="76" cy="92" r="19" fill="#F9F5F0" stroke="#E8DFDA" stroke-width="1"/>
+          <circle cx="70" cy="85" r="5.5" fill="rgba(255,255,255,0.7)"/>
+          <!-- Right earring -->
+          <path d="M 138,20 C 138,12 128,10 124,14 C 120,18 120,28 124,36" fill="none" stroke="#C9A84C" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="124" y1="36" x2="124" y2="50" stroke="#C9A84C" stroke-width="1.4"/>
+          <rect x="118" y="50" width="12" height="7" rx="2.5" fill="#C9A84C"/>
+          <line x1="124" y1="57" x2="124" y2="72" stroke="#C9A84C" stroke-width="1.2"/>
+          <circle cx="124" cy="92" r="19" fill="#F9F5F0" stroke="#E8DFDA" stroke-width="1"/>
+          <circle cx="118" cy="85" r="5.5" fill="rgba(255,255,255,0.7)"/>
+        </svg>
+      </div>
+      <div class="cb">
+        <p class="ctag">Earrings</p>
+        <p class="cname">Classic Pearl Drops</p>
+        <p class="cdesc">Freshwater pearl drops on gold-filled hooks. Lightweight and elegant for any occasion.</p>
+        <div class="cft"><span class="cprice">$22</span><a href="#order" class="clink">Order yours</a></div>
+      </div>
+    </div>
+
+    <!-- Card 4: Charm Bracelet -->
+    <div class="jcard">
+      <div class="cp">
+        <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+          <!-- wavy chain -->
+          <path d="M 12,62 C 35,55 50,70 80,62 C 110,54 130,72 160,62 C 170,58 178,60 188,62" fill="none" stroke="#C9A84C" stroke-width="1.6"/>
+          <!-- chain link dots -->
+          <circle cx="30" cy="58" r="2" fill="#C9A84C"/>
+          <circle cx="60" cy="67" r="2" fill="#C9A84C"/>
+          <circle cx="100" cy="58" r="2" fill="#C9A84C"/>
+          <circle cx="140" cy="66" r="2" fill="#C9A84C"/>
+          <circle cx="170" cy="60" r="2" fill="#C9A84C"/>
+          <!-- Star charm at x=32 -->
+          <line x1="32" y1="62" x2="32" y2="74" stroke="#C9A84C" stroke-width="1.1"/>
+          <polygon points="32,74 33.6,79 38,79 34.7,82 35.8,87 32,84.2 28.2,87 29.3,82 26,79 30.4,79" fill="#FBBF24" stroke="#D97706" stroke-width=".4"/>
+          <!-- Heart charm at x=65 -->
+          <line x1="65" y1="68" x2="65" y2="80" stroke="#C9A84C" stroke-width="1.1"/>
+          <path d="M 65,95 C 65,95 56,88 56,83 A 4.5,4.5 0 0 1 65,80 A 4.5,4.5 0 0 1 74,83 C 74,88 65,95 65,95 Z" fill="#F472B6" stroke="#DB2777" stroke-width=".5"/>
+          <!-- Moon charm at x=100 -->
+          <line x1="100" y1="60" x2="100" y2="72" stroke="#C9A84C" stroke-width="1.1"/>
+          <path d="M 100,72 C 109,72 116,76 116,82 C 116,88 109,92 100,92 C 105,89 108,86 108,82 C 108,78 105,75 100,72 Z" fill="#A78BFA" stroke="#7C3AED" stroke-width=".5"/>
+          <!-- Gem charm at x=138 -->
+          <line x1="138" y1="68" x2="138" y2="78" stroke="#C9A84C" stroke-width="1.1"/>
+          <polygon points="138,78 146,84 138,97 130,84" fill="#34D399" stroke="#059669" stroke-width=".5"/>
+          <line x1="138" y1="78" x2="138" y2="97" stroke="rgba(255,255,255,0.3)" stroke-width=".8"/>
+          <line x1="130" y1="84" x2="146" y2="84" stroke="rgba(255,255,255,0.3)" stroke-width=".8"/>
+          <!-- Butterfly charm at x=172 -->
+          <line x1="172" y1="62" x2="172" y2="74" stroke="#C9A84C" stroke-width="1.1"/>
+          <ellipse cx="166" cy="79" rx="7" ry="5" fill="#F472B6" opacity=".85" transform="rotate(-20 166 79)"/>
+          <ellipse cx="178" cy="79" rx="7" ry="5" fill="#C084FC" opacity=".85" transform="rotate(20 178 79)"/>
+          <ellipse cx="166" cy="86" rx="5" ry="4" fill="#F9A8D4" opacity=".7" transform="rotate(15 166 86)"/>
+          <ellipse cx="178" cy="86" rx="5" ry="4" fill="#DDD6FE" opacity=".7" transform="rotate(-15 178 86)"/>
+          <line x1="172" y1="76" x2="172" y2="90" stroke="#C9A84C" stroke-width=".9"/>
+        </svg>
+      </div>
+      <div class="cb">
+        <p class="ctag">Charm Bracelet</p>
+        <p class="cname">Crystal Charm Bracelet</p>
+        <p class="cdesc">Gold-filled chain with genuine crystal charms — star, heart, moon, gem, and butterfly.</p>
+        <div class="cft"><span class="cprice"><span class="cfrom">from</span>$35</span><a href="#order" class="clink">Order yours</a></div>
+      </div>
+    </div>
+
+    <!-- Card 5: Birthstone Pendant -->
+    <div class="jcard">
+      <div class="cp">
+        <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+          <!-- chain -->
+          <line x1="100" y1="8" x2="100" y2="52" stroke="#C9A84C" stroke-width="1.3"/>
+          <ellipse cx="100" cy="16" rx="2.2" ry="1.1" fill="#C9A84C"/>
+          <ellipse cx="100" cy="24" rx="2.2" ry="1.1" fill="#C9A84C"/>
+          <ellipse cx="100" cy="32" rx="2.2" ry="1.1" fill="#C9A84C"/>
+          <ellipse cx="100" cy="40" rx="2.2" ry="1.1" fill="#C9A84C"/>
+          <ellipse cx="100" cy="48" rx="2.2" ry="1.1" fill="#C9A84C"/>
+          <!-- bail -->
+          <rect x="94" y="50" width="12" height="10" rx="2.5" fill="#C9A84C"/>
+          <!-- amethyst teardrop -->
+          <path d="M 100,148
+                   C 82,135 74,118 74,104
+                   A 26,26 0 0 1 126,104
+                   C 126,118 118,135 100,148 Z"
+                fill="#9B59B6" stroke="#7D3C98" stroke-width=".8"/>
+          <!-- facet lines -->
+          <line x1="100" y1="82" x2="100" y2="144" stroke="rgba(255,255,255,0.22)" stroke-width="1.2"/>
+          <line x1="80"  y1="104" x2="120" y2="104" stroke="rgba(255,255,255,0.22)" stroke-width="1.2"/>
+          <line x1="100" y1="82" x2="80"  y2="104" stroke="rgba(255,255,255,0.12)" stroke-width=".8"/>
+          <line x1="100" y1="82" x2="120" y2="104" stroke="rgba(255,255,255,0.12)" stroke-width=".8"/>
+          <!-- highlight glint -->
+          <circle cx="88" cy="94" r="4" fill="rgba(255,255,255,0.28)"/>
+        </svg>
+      </div>
+      <div class="cb">
+        <p class="ctag">Pendant Necklace</p>
+        <p class="cname">Birthstone Teardrop</p>
+        <p class="cdesc">Natural gemstone pendant on an 18" gold chain. All 12 birthstones available.</p>
+        <div class="cft"><span class="cprice">$32</span><a href="#order" class="clink">Order yours</a></div>
+      </div>
+    </div>
+
+    <!-- Card 6: Initial Ring -->
+    <div class="jcard">
+      <div class="cp">
+        <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+          <!-- ring band back (top arc, darker) -->
+          <path d="M 52,90 A 48,28 0 0 0 148,90" fill="none" stroke="#A8863A" stroke-width="13" stroke-linecap="round"/>
+          <!-- stone mounting -->
+          <rect x="76" y="54" width="48" height="34" rx="5" fill="#F472B6" stroke="#C9A84C" stroke-width="2"/>
+          <rect x="80" y="58" width="40" height="26" rx="3.5" fill="#F9A8D4" opacity=".4"/>
+          <text x="100" y="74" text-anchor="middle" dominant-baseline="central" font-family="Georgia,serif" font-size="20" font-style="italic" fill="white" font-weight="300">V</text>
+          <!-- highlight on stone -->
+          <line x1="80" y1="60" x2="88" y2="68" stroke="rgba(255,255,255,0.5)" stroke-width="1.8" stroke-linecap="round"/>
+          <!-- ring band front (bottom arc, brighter) -->
+          <path d="M 52,90 A 48,28 0 0 1 148,90" fill="none" stroke="#C9A84C" stroke-width="13" stroke-linecap="round"/>
+          <!-- band shine -->
+          <path d="M 58,90 A 42,24 0 0 1 142,90" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="cb">
+        <p class="ctag">Stacking Ring</p>
+        <p class="cname">Initial Statement Ring</p>
+        <p class="cdesc">Dainty gold-filled initial ring with a rose stone setting. Adjustable for any finger.</p>
+        <div class="cft"><span class="cprice">$18</span><a href="#order" class="clink">Order yours</a></div>
+      </div>
+    </div>
+
+  </div><!-- /g3 -->
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="process">
+  <div class="sh">
+    <p class="eyebrow-s">The Process</p>
+    <h2 class="st">Simple, personal, <em>made for you</em></h2>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="snum">1</div>
+      <p class="stitle">Pick your piece</p>
+      <p class="sdesc">Browse the collection and choose the style that speaks to you — or message for something totally one-of-a-kind.</p>
+    </div>
+    <div class="step">
+      <div class="snum">2</div>
+      <p class="stitle">Share your details</p>
+      <p class="sdesc">Tell us your name, initials, birthstone, colors, or anything else that makes it yours. We'll confirm everything before we start.</p>
+    </div>
+    <div class="step">
+      <div class="snum">3</div>
+      <p class="stitle">Receive your piece</p>
+      <p class="sdesc">Your custom jewelry is handmade and shipped in 3–5 days, gift-wrapped and ready to wear or share.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec" id="order">
+  <p class="eyebrow-s">Ready?</p>
+  <h2 class="st">Start your <em>custom piece</em></h2>
+  <p class="sub">Send a message with the piece you have in mind and your personal details. Together we'll create something beautiful — made with faith, made for you.</p>
+  <div class="cta-row">
+    <a href="sms:+14075550000" class="btn btn-ruby">Text to Order</a>
+    <a href="mailto:lunagems@example.com" class="btn btn-ghost">Send an Email</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ftr" id="contact">
+  <div>
+    <a href="#" class="logo">Hannah <span class="g">Creations</span></a>
+    <p class="ftag">Custom handmade jewelry crafted with faith and love in Spring Hill, FL. Each piece is a small reflection of grace.</p>
+    <p class="fct">📱 <a href="sms:+14075550000">(407) 555-0000</a></p>
+    <p class="fct">✉️ <a href="mailto:lunagems@example.com">lunagems@example.com</a></p>
+    <p class="fct">📍 Spring Hill, FL — ships nationwide</p>
+  </div>
+  <div class="fcol">
+    <h4>Pieces</h4>
+    <ul class="flinks">
+      <li><a href="#pieces">Name Necklaces</a></li>
+      <li><a href="#pieces">Beaded Bracelets</a></li>
+      <li><a href="#pieces">Pearl Earrings</a></li>
+      <li><a href="#pieces">Cross Necklaces</a></li>
+      <li><a href="#pieces">Birthstone Pendants</a></li>
+      <li><a href="#pieces">Initial Rings</a></li>
+    </ul>
+  </div>
+  <div class="fcol">
+    <h4>Info</h4>
+    <ul class="flinks">
+      <li><a href="#process">How It Works</a></li>
+      <li><a href="#order">Custom Orders</a></li>
+      <li><a href="#order">Gift Options</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="fbot">
+  <p>© 2026 Hannah Creations — All pieces handmade.</p>
+  <p>"She is clothed with strength &amp; dignity." — Prov. 31:25</p>
+</div>
+
+<script>
+(function() {
+  const canvas = document.getElementById('hCanvas');
+  const container = canvas.parentElement;
+  const dpr = window.devicePixelRatio || 1;
+  let W, H, reducedMotion;
+
+  reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function resize() {
+    W = container.offsetWidth * dpr;
+    H = container.offsetHeight * dpr;
+    canvas.width = W;
+    canvas.height = H;
+  }
+
+  function isDark() {
+    const a = document.documentElement.getAttribute('data-theme');
+    if (a === 'dark') return true;
+    if (a === 'light') return false;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  function bpt(P0, P1, P2, P3, t) {
+    const m = 1 - t;
+    return {
+      x: m*m*m*P0[0] + 3*m*m*t*P1[0] + 3*m*t*t*P2[0] + t*t*t*P3[0],
+      y: m*m*m*P0[1] + 3*m*m*t*P1[1] + 3*m*t*t*P2[1] + t*t*t*P3[1]
+    };
+  }
+
+  function sparkle(ctx, x, y, sz, alpha, gold) {
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.strokeStyle = gold;
+    ctx.lineWidth = 1.3 * dpr;
+    ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(x - sz * 1.2, y); ctx.lineTo(x + sz * 1.2, y); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(x, y - sz * 1.7); ctx.lineTo(x, y + sz * 1.7); ctx.stroke();
+    ctx.lineWidth = 0.75 * dpr;
+    ctx.globalAlpha = alpha * 0.45;
+    const d = sz * 0.6;
+    ctx.beginPath(); ctx.moveTo(x-d, y-d); ctx.lineTo(x+d, y+d); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(x+d, y-d); ctx.lineTo(x-d, y+d); ctx.stroke();
+    ctx.restore();
+  }
+
+  function draw(ts) {
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, W, H);
+    const dark = isDark();
+    const gold = dark ? '#D4AF60' : '#C9A84C';
+    const ruby = dark ? '#E03568' : '#B5003A';
+    const t = ts / 1000;
+    const u = (v) => v * dpr;
+
+    const cx = W / 2, cy = H / 2;
+    const sc = Math.min(W, H) / (480 * dpr);
+
+    // --- NECKLACE CHAIN (U bezier) ---
+    const chainW = 170 * sc * dpr;
+    const chainDropCtrl = 95 * sc * dpr;
+    const chainY = cy - 80 * sc * dpr;
+    const P0 = [cx - chainW, chainY];
+    const P1 = [cx - chainW, chainY + chainDropCtrl];
+    const P2 = [cx + chainW, chainY + chainDropCtrl];
+    const P3 = [cx + chainW, chainY];
+
+    ctx.save();
+    ctx.strokeStyle = gold;
+    ctx.lineWidth = u(1.6) * sc;
+    ctx.beginPath();
+    ctx.moveTo(...P0);
+    ctx.bezierCurveTo(...P1, ...P2, ...P3);
+    ctx.stroke();
+
+    // chain link marks
+    ctx.fillStyle = gold;
+    for (let ti = 0.02; ti <= 0.98; ti += 0.045) {
+      const p = bpt(P0, P1, P2, P3, ti);
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, u(2) * sc, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    // clasps
+    [[...P0], [...P3]].forEach(([x, y]) => {
+      ctx.beginPath(); ctx.arc(x, y, u(4.5) * sc, 0, Math.PI * 2); ctx.fill();
+    });
+    ctx.restore();
+
+    // --- DROP CHAIN + BAIL ---
+    const chainBottom = bpt(P0, P1, P2, P3, 0.5);
+    const dropLen = 38 * sc * dpr;
+    const bailH = 9 * sc * dpr, bailW = 13 * sc * dpr;
+    const bailY = chainBottom.y + dropLen;
+
+    ctx.save();
+    ctx.strokeStyle = gold; ctx.lineWidth = u(1.3) * sc;
+    ctx.beginPath(); ctx.moveTo(chainBottom.x, chainBottom.y); ctx.lineTo(chainBottom.x, bailY); ctx.stroke();
+    ctx.fillStyle = gold;
+    const bx = chainBottom.x - bailW / 2, by = bailY - bailH / 2;
+    ctx.beginPath();
+    ctx.roundRect ? ctx.roundRect(bx, by, bailW, bailH, u(2.5) * sc) : ctx.rect(bx, by, bailW, bailH);
+    ctx.fill();
+    ctx.restore();
+
+    // --- TEARDROP PENDANT ---
+    const gemW = 46 * sc * dpr;
+    const gemR = gemW / 2;
+    const gemTop = bailY + bailH / 2;
+    const circleCY = gemTop + gemR;
+    const gemBottom = gemTop + 80 * sc * dpr;
+    const gcx = chainBottom.x;
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(gcx, gemBottom);
+    ctx.bezierCurveTo(gcx - gemW * 0.55, gemBottom - 28 * sc * dpr, gcx - gemR, circleCY + gemR * 0.4, gcx - gemR, circleCY);
+    ctx.arc(gcx, circleCY, gemR, Math.PI, 0, false);
+    ctx.bezierCurveTo(gcx + gemR, circleCY + gemR * 0.4, gcx + gemW * 0.55, gemBottom - 28 * sc * dpr, gcx, gemBottom);
+    ctx.closePath();
+
+    const grd = ctx.createRadialGradient(gcx - gemR * 0.3, circleCY - gemR * 0.25, gemR * 0.1, gcx, circleCY + gemR * 0.8, gemR * 2.8);
+    grd.addColorStop(0, dark ? '#FF608A' : '#E0245E');
+    grd.addColorStop(0.45, ruby);
+    grd.addColorStop(1, dark ? '#7A0030' : '#580020');
+    ctx.fillStyle = grd;
+    ctx.fill();
+
+    // facet lines
+    ctx.globalAlpha = 0.22; ctx.strokeStyle = '#fff'; ctx.lineWidth = u(1.4) * sc;
+    ctx.beginPath(); ctx.moveTo(gcx, gemTop + 4 * sc * dpr); ctx.lineTo(gcx, gemBottom - 8 * sc * dpr); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(gcx - gemR * 0.75, circleCY); ctx.lineTo(gcx + gemR * 0.75, circleCY); ctx.stroke();
+    ctx.globalAlpha = 1;
+    ctx.strokeStyle = dark ? 'rgba(255,80,120,0.3)' : 'rgba(90,0,30,0.2)'; ctx.lineWidth = u(0.8) * sc;
+    ctx.stroke();
+
+    // glint
+    ctx.globalAlpha = 0.32;
+    ctx.beginPath(); ctx.arc(gcx - gemR * 0.38, circleCY - gemR * 0.3, gemR * 0.22, 0, Math.PI * 2);
+    ctx.fillStyle = '#fff'; ctx.fill();
+    ctx.restore();
+
+    // --- SPARKLES (animated float) ---
+    const sData = [
+      {rx:0.13, ry:0.15, sz:7, ph:0, al:0.75},
+      {rx:0.87, ry:0.18, sz:9, ph:1.4, al:0.70},
+      {rx:0.10, ry:0.68, sz:5, ph:0.8, al:0.60},
+      {rx:0.90, ry:0.62, sz:7, ph:2.2, al:0.68},
+      {rx:0.50, ry:0.05, sz:5, ph:1.9, al:0.55},
+      {rx:0.70, ry:0.90, sz:6, ph:0.3, al:0.58},
+    ];
+    sData.forEach(s => {
+      const fy = reducedMotion ? 0 : Math.sin(t * 1.1 + s.ph) * 5 * sc * dpr;
+      sparkle(ctx, s.rx * W, s.ry * H + fy, s.sz * sc * dpr, s.al, gold);
+    });
+
+    // --- SMALL PEARLS ---
+    [[0.2, 0.38, 0.6], [0.8, 0.35, 1.3]].forEach(([rx, ry, ph]) => {
+      const fy = reducedMotion ? 0 : Math.sin(t * 0.85 + ph) * 3 * sc * dpr;
+      const px2 = rx * W, py = ry * H + fy;
+      const r = 6 * sc * dpr;
+      ctx.save();
+      ctx.beginPath(); ctx.arc(px2, py, r, 0, Math.PI * 2);
+      ctx.fillStyle = dark ? '#D5C8C0' : '#F8F4F0'; ctx.fill();
+      ctx.strokeStyle = gold; ctx.lineWidth = u(0.8) * sc; ctx.stroke();
+      ctx.beginPath(); ctx.arc(px2 - r * 0.3, py - r * 0.3, r * 0.38, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,255,255,0.65)'; ctx.fill();
+      ctx.restore();
+    });
+
+    if (!reducedMotion) requestAnimationFrame(draw);
+  }
+
+  resize();
+  window.addEventListener('resize', () => { resize(); if (reducedMotion) draw(0); });
+  requestAnimationFrame(draw);
+})();
+</script>
